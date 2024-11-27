@@ -1,27 +1,35 @@
 <div class="topscore">
     <div class="topscore-container">
-        <div class="scoreboard">
-            <div class="teamcard">
-                <div class="teaminfo-container">
-                    <img class="team-image" src="{{match.teams[0].teamUrl}}" />
-                    <div class="teamcode">{{match.teams[0].teamTricode}}</div>
-                </div>
-                <div class="divider" [class]="match.teams[0].isAttacking ? 'red' : 'green'"></div>
-                <div class="scoreblock-left" [class]="match.teams[0].isAttacking ? 'red' : 'green'">
-                    <div class="score-text">{{match.teams[0].roundsWon}}</div>
-                </div>
+        <div class="top-score-box">
+            <div class="top-score">
+                <!-- Graphics section -->
+              <img class="team-card-bg-left" src="../../assets/topscore/teamCardBg.svg" />
+              <img class="team-card-bg-right" src="../../assets/topscore/teamCardBg.svg" />
+              <div>
+                <img class="scoreblock-left" [src]="match.teams[1].isAttacking ? '../../assets/topscore/green.svg' : '../../assets/topscore/red.svg'" />
+                <img class="scoreblock-right flip" [src]="match.teams[0].isAttacking ? '../../assets/topscore/green.svg' : '../../assets/topscore/red.svg'" />
+                <img class="stoke-right" [src]="match.teams[0].isAttacking ? '../../assets/topscore/greenStroke.svg' : '../../assets/topscore/redStroke.svg'" />
+                <img class="stoke-left" [src]="match.teams[1].isAttacking ? '../../assets/topscore/greenStroke.svg' : '../../assets/topscore/redStroke.svg'" />
+                <img class="team-image-0" src="{{match.teams[0].teamUrl}}" />
+                <div class="teamcode-0">{{match.teams[0].teamTricode}}</div>
+                <div class="score-text-0">{{match.teams[0].roundsWon}}</div>
+                <img class="team-image-1" src="{{match.teams[1].teamUrl}}" />
+                <div class="teamcode-1">{{match.teams[1].teamTricode}}</div>
+                <div class="score-text-1">{{match.teams[1].roundsWon}}</div>
+              </div>
+              <img class="vector4" src="../../assets/topscore/overlay2.svg" />
+              <img class="vector5" src="../../assets/topscore/overlay3.svg" />
+              <img class="vector6" src="../../assets/topscore/overlay4.svg" />
+              <img class="vector7" src="../../assets/topscore/overlay3.svg" />
+              <img class="vector8" src="../../assets/topscore/overlay3.svg" />
+              <img class="vector9" src="../../assets/topscore/overlay4.svg" />
+              <img class="vector10" src="../../assets/topscore/overlay3.svg" />
+              <img class="spike-side" [class]="match.teams[0].isAttacking ? 'spike-left' : 'spike-right'" src="../../assets/topscore/spikeSide.svg" />
+              <img class="spike" *ngIf="match.roundPhase === 'combat' && !match.spikeState.planted && !match.spikeState.detonated && !match.spikeState.defused" src="../../assets/topscore/spike.svg" />
+              <img class="vector11" src="../../assets/topscore/overlay9.svg" />
+              <img class="vector15" src="../../assets/topscore/overlay1.svg" />
             </div>
-            <div class="teamcard">
-                <div class="scoreblock-right" [class]="match.teams[1].isAttacking ? 'red' : 'green'">
-                    <div class="score-text">{{match.teams[1].roundsWon}}</div>
-                </div>
-                <div class="divider" [class]="match.teams[1].isAttacking ? 'red' : 'green'"></div>
-                <div class="teaminfo-container">
-                    <div class="teamcode">{{match.teams[1].teamTricode}}</div>
-                    <img class="team-image" src="{{match.teams[1].teamUrl}}" />
-                </div>
-            </div>
-        </div>
+          </div>
         <app-mapwins *ngIf="false" />
         <div class="spike-indicator" *ngIf="match.roundPhase === 'combat' && match.spikeState.planted && !match.spikeState.detonated && !match.spikeState.defused" [@fade]>
             <img class="spike-icon" src="../../assets/misc/Spike_top_{{blinkState ? 'light' : 'dark'}}.svg" />
