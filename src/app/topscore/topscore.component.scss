@@ -240,31 +240,32 @@
 }
 
 .score-text {
-    position: relative;
+    position: absolute;
     width: fit-content;
     text-shadow: 0px 1.21px 4.83px rgba(0, 0, 0, 0.12);
     font-family: "Montserrat", Helvetica;
     font-weight: 700;
+    position: absolute;
     color: #ffffff;
     font-size: 40px;
     font-style: normal;
     text-align: center;
     &-0 {
       @extend .score-text;
-      top: -43px;
-      left: 160px;
+      top: 18px;
+      left: 159px;
     }
     &-1 {
       @extend .score-text;
-      top: -156px;
-      left: 430px;
+      top: 18px;
+      left: 424px;
     }
     // letter-spacing: 1.2px;
     line-height: normal;
 }
 
 .team-image {
-    position: relative;
+    position: absolute;
     max-width: 38.34px;
     max-height: 38.34px;
     &-0 {
@@ -274,13 +275,13 @@
     }
     &-1 {
       @extend .team-image;
-      top: -86px;
-      left: 558px;
+      top: 25px;
+      left: 555px;
     }
 }
 
 .teamcode {
-    position: relative;
+    position: absolute;
     width: fit-content;
     margin-top: -1.21px;
     font-family: Unbounded, Helvetica;
@@ -292,12 +293,12 @@
     letter-spacing: -0.48px;
     &-0 {
       @extend .teamcode;
-      top: -6px;
+      top: 30px;
       left: 80px;
     }
     &-1 {
       @extend .teamcode;
-      top: -118px;
+      top: 30px;
       left: 490px;
     }
     line-height: normal;
