@@ -32,7 +32,7 @@
               <img class="vector9" src="../../assets/topscore/overlay4.svg" />
               <img class="vector10" src="../../assets/topscore/overlay3.svg" />
               <img class="spike-side" [class]="match.teams[0].isAttacking ? 'spike-left' : 'spike-right'" src="../../assets/topscore/spikeSide.svg" />
-              <img class="spike" *ngIf="match.roundPhase === 'combat' && !match.spikeState.planted && !match.spikeState.detonated && !match.spikeState.defused" src="../../assets/topscore/spike.svg" />
+              <img class="spike" *ngIf="match.roundPhase === 'shopping' || match.roundPhase === 'combat' && !match.spikeState.planted && !match.spikeState.detonated && !match.spikeState.defused" src="../../assets/topscore/spike.svg" />
               <img class="vector11" src="../../assets/topscore/overlay9.svg" />
               <img class="vector15" src="../../assets/topscore/overlay1.svg" />
             </div>
